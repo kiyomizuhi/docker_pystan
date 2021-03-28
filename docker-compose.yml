@@ -1,0 +1,14 @@
+version: "3"
+services:
+  stan:
+    image: pystan
+    container_name: stan
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/work
